@@ -9,3 +9,7 @@ docker exec myjenkins cat /var/jenkins_home/secrets/initialAdminPassword
 docker exec -it myjenkins bash
 docker exec -it -u root myjenkins bash      CTRL-p CTRL-q for exit
 
+
+
+
+curl -v -X GET http://127.0.0.1:8080/crumbIssuer/api/json --user <username>:<password>

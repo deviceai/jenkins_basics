@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh '''
+                apk add --update python3
                 cd myapp
                 pip install -r requirements.txt
                 '''  

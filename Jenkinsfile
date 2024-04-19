@@ -13,8 +13,7 @@ pipeline {
                 sh '''
                 cd myapp
                 pip install -r requirements.txt
-                '''
-                
+                '''  
             }
         }
 
@@ -22,7 +21,10 @@ pipeline {
             steps {
                 echo 'Testing..'
                /* sh 'python3 python_test.py' */
-               sh python3 hello.py --name=Alex
+               sh '''
+               cd myapp
+               python3 hello.py --name=Alex
+               '''
             }
         }
 

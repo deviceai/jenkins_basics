@@ -6,7 +6,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Building..'
-                /* sh 'python3 python_test.py' */
+                sh 'python3 python_test.py'
             }
         }
 
@@ -15,6 +15,7 @@ pipeline {
                 echo 'Testing..'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'

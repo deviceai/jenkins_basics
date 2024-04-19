@@ -21,3 +21,9 @@ docker inspect <container_id> | grep IPAddress
 
 In Jenkins Docker Host URI:
 tcp://172.18.0.3:2375
+
+
+Poll SCM
+*/5 * * * *
+
+every 5 minutes, check if there are new commit

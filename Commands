@@ -13,3 +13,11 @@ docker exec -it -u root myjenkins bash      CTRL-p CTRL-q for exit
 
 
 curl -v -X GET http://127.0.0.1:8080/crumbIssuer/api/json --user <username>:<password>
+
+
+alpine/socat container to forward traffic from Jenkins to Docker Desktop on Host Machine:
+docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
+docker inspect <container_id> | grep IPAddress
+
+In Jenkins Docker Host URI:
+tcp://172.18.0.3:2375

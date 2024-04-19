@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    triggers {
+        poolSCM '*/5 * * * *'
+    }
+
     stages {
         stage('build') {
             steps {

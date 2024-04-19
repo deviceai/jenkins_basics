@@ -1,5 +1,5 @@
 stage('build') {
     steps {
-        sh 'python python_test.py'
+        sh 'python3 python_test.py'
     }
 }

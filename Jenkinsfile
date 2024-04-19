@@ -1,5 +1,11 @@
-stage('build') {
-    steps {
-        sh 'python3 python_test.py'
+pipeline {
+
+    agent any
+
+    stage('build') {
+        steps {
+            echo 'Building..'
+            sh 'python3 python_test.py'
+        }
     }
 }

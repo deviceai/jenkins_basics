@@ -3,7 +3,7 @@ pipeline {
     /* agent any */
     agent { 
         node {
-            label 'docker-agent-alpine'
+            label 'docker-agent-python'
             }
       }
 

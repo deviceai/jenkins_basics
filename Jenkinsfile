@@ -17,9 +17,8 @@ pipeline {
                 echo 'Building..'
                 sh '''
                 cd myapp
-                apk update
-                apk add --update python3
-                apk add --update py3-pip
+                apt-get update
+                apk-get install -y lsb-release python3-pip
                 pip install -r requirements.txt --break-system-packages
                 '''  
             }
